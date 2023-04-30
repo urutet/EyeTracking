@@ -1,0 +1,27 @@
+PODS:
+  - EyeTracking (0.1.0)
+  - Nimble (10.0.0)
+  - Quick (2.2.1)
+
+DEPENDENCIES:
+  - EyeTracking (from `../`)
+  - Nimble (~> 10.0.0)
+  - Quick (~> 2.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  EyeTracking:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EyeTracking: 1e0cee72be5386d438c708fca406b01943af68d7
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+
+PODFILE CHECKSUM: 634d73993a2fbfddcb19179f5448200048c17e1d
+
+COCOAPODS: 1.11.3

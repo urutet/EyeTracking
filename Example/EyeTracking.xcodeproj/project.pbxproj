@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F1C811F277D7FD8E773B73E /* EyeTracking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = EyeTracking.podspec; path = ../EyeTracking.podspec; sourceTree = "<group>"; };
+		4F1C811F277D7FD8E773B73E /* EyeTracking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EyeTracking.podspec; path = ../EyeTracking.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5A89F85F99F85A258317A9E4 /* Pods_EyeTracking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EyeTracking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* EyeTracking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeTracking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,10 +42,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		616D8A9F4942E414B8E1581F /* Pods_EyeTracking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EyeTracking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AAC50297623F27BB5B0662E /* Pods-EyeTracking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Tests.release.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Tests/Pods-EyeTracking_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		780B47D489C0045F606D1947 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		780B47D489C0045F606D1947 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9F4273AD8830D540DC76EF53 /* Pods-EyeTracking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Tests.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Tests/Pods-EyeTracking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4D6626FF5B6D5E1F37D7337 /* Pods-EyeTracking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.release.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C51EDC4D132A140AF2EE29F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C51EDC4D132A140AF2EE29F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +86,6 @@
 				9F4273AD8830D540DC76EF53 /* Pods-EyeTracking_Tests.debug.xcconfig */,
 				6AAC50297623F27BB5B0662E /* Pods-EyeTracking_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,10 +213,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = M46WL2C5J3;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = M46WL2C5J3;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -228,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -499,7 +501,9 @@
 			baseConfigurationReference = F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M46WL2C5J3;
 				INFOPLIST_FILE = EyeTracking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -514,7 +518,9 @@
 			baseConfigurationReference = B4D6626FF5B6D5E1F37D7337 /* Pods-EyeTracking_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M46WL2C5J3;
 				INFOPLIST_FILE = EyeTracking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -528,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F4273AD8830D540DC76EF53 /* Pods-EyeTracking_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = M46WL2C5J3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -537,6 +544,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,11 +558,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6AAC50297623F27BB5B0662E /* Pods-EyeTracking_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = M46WL2C5J3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
