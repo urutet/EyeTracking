@@ -10,7 +10,6 @@
 		44161309EE9F18D354726936 /* Pods_EyeTracking_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A89F85F99F85A258317A9E4 /* Pods_EyeTracking_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
@@ -19,6 +18,8 @@
 		CE1D48E129FE7C2E0092DFF0 /* SessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E029FE7C2E0092DFF0 /* SessionError.swift */; };
 		CE1D48E429FE89F40092DFF0 /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E329FE89F40092DFF0 /* EyeTracking.swift */; };
 		CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E829FE8C4E0092DFF0 /* SessionDelegate.swift */; };
+		CFDC06C52A0395D9002D1E25 /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC06C42A0395D9002D1E25 /* Pointer.swift */; };
+		CFDC06CB2A039D97002D1E25 /* PointerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* EyeTracking_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeTracking_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +54,8 @@
 		CE1D48E029FE7C2E0092DFF0 /* SessionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionError.swift; sourceTree = "<group>"; };
 		CE1D48E329FE89F40092DFF0 /* EyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
 		CE1D48E829FE8C4E0092DFF0 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		CFDC06C42A0395D9002D1E25 /* Pointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pointer.swift; sourceTree = "<group>"; };
+		CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerConfiguration.swift; sourceTree = "<group>"; };
 		F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,7 +126,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -171,6 +172,7 @@
 		CE1D48DC29FE7A850092DFF0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC06C32A0395CA002D1E25 /* Pointer */,
 				CE1D48E229FE89E80092DFF0 /* EyeTracking */,
 				CE1D48DF29FE7C1D0092DFF0 /* Session */,
 			);
@@ -193,6 +195,15 @@
 				CE1D48E329FE89F40092DFF0 /* EyeTracking.swift */,
 			);
 			path = EyeTracking;
+			sourceTree = "<group>";
+		};
+		CFDC06C32A0395CA002D1E25 /* Pointer */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC06C42A0395D9002D1E25 /* Pointer.swift */,
+				CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */,
+			);
+			path = Pointer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +296,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -396,6 +406,8 @@
 				CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */,
 				CE1D48DE29FE7B490092DFF0 /* Session.swift in Sources */,
 				CE1D48E129FE7C2E0092DFF0 /* SessionError.swift in Sources */,
+				CFDC06CB2A039D97002D1E25 /* PointerConfiguration.swift in Sources */,
+				CFDC06C52A0395D9002D1E25 /* Pointer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,14 +430,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

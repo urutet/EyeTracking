@@ -11,10 +11,22 @@ import ARKit
 
 public class EyeTracking {
     var session: Session
+    var pointer: Pointer?
     
-    init(session: Session = Session()) {
+    public init(session: Session = Session()) {
         self.session = session
         session.delegate = self
+    }
+    
+    /**
+     Shows pointer if it is needed by application.
+     - Parameters:
+     - parameter window: Application window to attach pointer to.
+     - parameter config: Pointer configuration.
+     */
+    public func showUIKitPointer(window: UIWindow, with config: PointerConfiguration) {
+        pointer = Pointer(window: window)
+        pointer?.show(with: config)
     }
 }
 
@@ -63,5 +75,6 @@ extension EyeTracking: SessionDelegate {
         
         // TODO: Manage screenPoint on screen
         print("POINT: \(screenPoint)")
+        pointer?.move(coordinates: screenPoint)
     }
 }
