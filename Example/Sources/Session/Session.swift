@@ -26,6 +26,13 @@ public class Session: NSObject {
         return config
     }()
     
+    /**
+     Start AR session with given or default ``ARFaceTrackingConfiguration`` and ``ARSession.RunOptions``.
+     - Parameters:
+     - parameter config: Face tracking configuration.
+     - parameter options: Session options.
+     
+     */
     public func start(with config: ARFaceTrackingConfiguration? = nil,
                              options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]) throws {
         guard ARFaceTrackingConfiguration.isSupported else { throw SessionError.arNotSupported }
@@ -42,6 +49,9 @@ public class Session: NSObject {
         isSessionInProgress = true
     }
     
+    /**
+     End current AR session.
+     */
     public func end() throws {
         guard isSessionInProgress else { throw SessionError.noSessionsInProgress }
         
