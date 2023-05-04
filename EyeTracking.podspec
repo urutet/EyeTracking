@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '14.0'
 
-  s.source_files = 'EyeTracking/Classes/**/*'
+  s.source_files = 'EyeTracking/Sources/**/*'
   
   # s.resource_bundles = {
   #   'EyeTracking' => ['EyeTracking/Assets/*.png']
