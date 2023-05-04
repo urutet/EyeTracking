@@ -26,7 +26,7 @@ public class EyeTracking {
      */
     public func showUIKitPointer(window: UIWindow, with config: PointerConfiguration) {
         pointer = Pointer(window: window)
-        pointer?.showUIKitPointer(with: config)
+        pointer?.show(with: config)
     }
 }
 
@@ -75,5 +75,6 @@ extension EyeTracking: SessionDelegate {
         
         // TODO: Manage screenPoint on screen
         print("POINT: \(screenPoint)")
+        pointer?.move(coordinates: screenPoint)
     }
 }

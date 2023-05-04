@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  EyeTracking
 //
-//  Created by urutet on 04/30/2023.
-//  Copyright (c) 2023 urutet. All rights reserved.
+//  Created by Ilya Yushkevich on 04/30/2023.
+//  Copyright (c) 2023 Ilya Yushkevich. All rights reserved.
 //
 
 import UIKit
