@@ -12,10 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var session = Session()
+    var eyeTracking: EyeTracking?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        do {
+            try session.start()
+        } catch let error {
+            print(error)
+        }
+        
+        eyeTracking = EyeTracking(session: session)
         return true
     }
 
