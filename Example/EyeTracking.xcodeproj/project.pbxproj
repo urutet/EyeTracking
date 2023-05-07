@@ -24,6 +24,10 @@
 		CFDC07092A07E589002D1E25 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07082A07E589002D1E25 /* Plane.swift */; };
 		CFDC070D2A07E5BC002D1E25 /* SIMD+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC070C2A07E5BC002D1E25 /* SIMD+Vector.swift */; };
 		CFDC070F2A07E5D1002D1E25 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC070E2A07E5D1002D1E25 /* Ray.swift */; };
+		CFDC07122A08116B002D1E25 /* FaceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07112A08116B002D1E25 /* FaceTracker.swift */; };
+		CFDC07142A0816D8002D1E25 /* FaceExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07132A0816D8002D1E25 /* FaceExpression.swift */; };
+		CFDC07162A08179C002D1E25 /* FaceTrackerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07152A08179C002D1E25 /* FaceTrackerDelegate.swift */; };
+		CFDC07192A081982002D1E25 /* Float+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07182A081982002D1E25 /* Float+Range.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		CFDC07082A07E589002D1E25 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		CFDC070C2A07E5BC002D1E25 /* SIMD+Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SIMD+Vector.swift"; sourceTree = "<group>"; };
 		CFDC070E2A07E5D1002D1E25 /* Ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		CFDC07112A08116B002D1E25 /* FaceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracker.swift; sourceTree = "<group>"; };
+		CFDC07132A0816D8002D1E25 /* FaceExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceExpression.swift; sourceTree = "<group>"; };
+		CFDC07152A08179C002D1E25 /* FaceTrackerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackerDelegate.swift; sourceTree = "<group>"; };
+		CFDC07182A081982002D1E25 /* Float+Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Range.swift"; sourceTree = "<group>"; };
 		F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +188,7 @@
 		CE1D48DC29FE7A850092DFF0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC07102A081152002D1E25 /* FaceTracker */,
 				CFDC070A2A07E5A4002D1E25 /* Extensions */,
 				CFDC06C32A0395CA002D1E25 /* Pointer */,
 				CE1D48E229FE89E80092DFF0 /* EyeTracker */,
@@ -221,6 +230,7 @@
 		CFDC070A2A07E5A4002D1E25 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC07172A081941002D1E25 /* Float */,
 				CFDC070B2A07E5AB002D1E25 /* SIMD */,
 			);
 			path = Extensions;
@@ -232,6 +242,24 @@
 				CFDC070C2A07E5BC002D1E25 /* SIMD+Vector.swift */,
 			);
 			path = SIMD;
+			sourceTree = "<group>";
+		};
+		CFDC07102A081152002D1E25 /* FaceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC07112A08116B002D1E25 /* FaceTracker.swift */,
+				CFDC07132A0816D8002D1E25 /* FaceExpression.swift */,
+				CFDC07152A08179C002D1E25 /* FaceTrackerDelegate.swift */,
+			);
+			path = FaceTracker;
+			sourceTree = "<group>";
+		};
+		CFDC07172A081941002D1E25 /* Float */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC07182A081982002D1E25 /* Float+Range.swift */,
+			);
+			path = Float;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +458,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				CE1D48E429FE89F40092DFF0 /* EyeTracker.swift in Sources */,
+				CFDC07142A0816D8002D1E25 /* FaceExpression.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */,
 				CE1D48DE29FE7B490092DFF0 /* Session.swift in Sources */,
@@ -437,9 +466,12 @@
 				CE1D48E129FE7C2E0092DFF0 /* SessionError.swift in Sources */,
 				CFDC06CB2A039D97002D1E25 /* PointerConfiguration.swift in Sources */,
 				CFDC06C52A0395D9002D1E25 /* Pointer.swift in Sources */,
+				CFDC07192A081982002D1E25 /* Float+Range.swift in Sources */,
+				CFDC07122A08116B002D1E25 /* FaceTracker.swift in Sources */,
 				CFDC070D2A07E5BC002D1E25 /* SIMD+Vector.swift in Sources */,
 				CFDC070F2A07E5D1002D1E25 /* Ray.swift in Sources */,
 				CFDC07092A07E589002D1E25 /* Plane.swift in Sources */,
+				CFDC07162A08179C002D1E25 /* FaceTrackerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

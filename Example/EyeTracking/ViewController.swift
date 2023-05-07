@@ -9,17 +9,23 @@
 import UIKit
 import ARKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
 
+    let faceTracker = FaceTracker(session: (UIApplication.shared.delegate as! AppDelegate).session)
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.backgroundColor = .white
+        faceTracker.delegate = self
+        faceTracker.initiateFaceExpression(FaceExpression(blendShape: .eyeBlinkLeft, minValue: 0.4, maxValue: 1))
     }
+    
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension ViewController: FaceTrackerDelegate {
+    func faceTracker(_ faceTracker: FaceTracker, didUpdateExpression expression: FaceExpression) {
+        print(expression.blendShape)
     }
-
 }
 
