@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var session = Session()
-    var eyeTracking: EyeTracking?
+    var eyeTracking: EyeTracker?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error)
         }
         
-        eyeTracking = EyeTracking(session: session)
-        eyeTracking?.showUIKitPointer(window: window, with: PointerConfiguration())
+        eyeTracking = EyeTracker(session: session)
+        eyeTracking?.showPointer(window: window, with: PointerConfiguration())
         
         window.makeKeyAndVisible()
         return true

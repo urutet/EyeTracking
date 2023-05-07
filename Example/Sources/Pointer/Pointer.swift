@@ -24,7 +24,7 @@ final public class Pointer {
      
      */
     
-    func show(with config: PointerConfiguration) {
+    public func show(with config: PointerConfiguration) {
         pointer = UIView(frame: CGRect(x: 0, y: 0, width: config.size.width, height: config.size.height))
         pointer.backgroundColor = config.color
         pointer.layer.cornerRadius = config.cornerRadius
@@ -34,7 +34,19 @@ final public class Pointer {
         window?.addSubview(pointer)
     }
     
-    func move(coordinates: CGPoint) {
-        pointer.frame = CGRect(x: coordinates.x, y: coordinates.y, width: pointer.frame.width, height: pointer.frame.height)
+    /**
+     Moves pointer to the specified point.
+     - Parameters:
+     - parameter point: Point to move pointer to.
+     
+     */
+    
+    func move(to point: CGPoint) {
+        pointer.frame = CGRect(
+            x: point.x,
+            y: point.y,
+            width: pointer.frame.width,
+            height: pointer.frame.height
+        )
     }
 }
