@@ -15,7 +15,7 @@ public class Session: NSObject {
     public private(set) var startTime = Date().timeIntervalSince1970
     public private(set) var endTime: TimeInterval?
     
-    var delegate: SessionDelegate?
+    public var delegates: [SessionDelegate] = []
     
     var faceTrackingConfiguration = {
         let config = ARFaceTrackingConfiguration()
@@ -67,6 +67,8 @@ public class Session: NSObject {
 
 extension Session: ARSessionDelegate {
     public func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        delegate?.sessionDidUpdate(session, frame: frame)
+        delegates.forEach { delegate in
+            delegate.sessionDidUpdate(session, frame: frame)
+        }
     }
 }

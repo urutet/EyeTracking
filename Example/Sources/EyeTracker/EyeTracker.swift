@@ -25,6 +25,7 @@ public class EyeTracker {
     
     var session: Session
     var pointer: Pointer?
+    public var delegate: EyeTrackerDelegate?
     public var screenDisplacement: Float = 0.043
     
     private var positionLogs: [CGPoint] = []
@@ -34,7 +35,7 @@ public class EyeTracker {
     
     public init(session: Session = Session()) {
         self.session = session
-        session.delegate = self
+        session.delegates.append(self)
     }
     
     /**
@@ -47,11 +48,9 @@ public class EyeTracker {
         pointer = Pointer(window: window)
         pointer?.show(with: config)
     }
-}
-
-extension EyeTracker: SessionDelegate {
-    public func sessionDidUpdate(_ session: ARSession, frame: ARFrame) {
-        guard let faceAnchor = frame.anchors.first as? ARFaceAnchor else { return }
+    
+    func getGazePosition(frame: ARFrame, viewport: CGSize) -> CGPoint? {
+        guard let faceAnchor = frame.anchors.first as? ARFaceAnchor else { return nil }
         
         let rightEyeSimdTransform = simd_mul(faceAnchor.transform, faceAnchor.rightEyeTransform)
         let leftEyeSimdTransform = simd_mul(faceAnchor.transform, faceAnchor.leftEyeTransform)
@@ -82,9 +81,18 @@ extension EyeTracker: SessionDelegate {
         
         let eyesMidPoint = (rightEyeEndSimdTransform.position + leftEyeEndSimdTransform.position) / 2
         
-        let viewport = UIScreen.main.bounds.size
         let screenPos = frame.camera.projectPoint(eyesMidPoint, orientation: .portrait, viewportSize: viewport)
         let smoothPos = smoothingPosition(with: screenPos)
+        
+        return smoothPos
+    }
+}
+
+extension EyeTracker: SessionDelegate {
+    public func sessionDidUpdate(_ session: ARSession, frame: ARFrame) {
+        let viewport = UIScreen.main.bounds.size
+        
+        guard let smoothPos = getGazePosition(frame: frame, viewport: viewport) else { return }
         
         if UIScreen.main.bounds.contains(smoothPos) {
             state = .screenIn(smoothPos)
@@ -102,6 +110,8 @@ extension EyeTracker: SessionDelegate {
                 fatalError("Invalid state")
             }
         }
+        
+        delegate?.eyeTracking(self, didUpdateState: state)
         
         pointer?.move(to: smoothPos)
     }
