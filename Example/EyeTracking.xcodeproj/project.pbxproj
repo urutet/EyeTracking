@@ -20,6 +20,7 @@
 		CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E829FE8C4E0092DFF0 /* SessionDelegate.swift */; };
 		CFDC06C52A0395D9002D1E25 /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC06C42A0395D9002D1E25 /* Pointer.swift */; };
 		CFDC06CB2A039D97002D1E25 /* PointerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */; };
+		CFDC07022A07D922002D1E25 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07012A07D922002D1E25 /* LowPassFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		CE1D48E829FE8C4E0092DFF0 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		CFDC06C42A0395D9002D1E25 /* Pointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pointer.swift; sourceTree = "<group>"; };
 		CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerConfiguration.swift; sourceTree = "<group>"; };
+		CFDC07012A07D922002D1E25 /* LowPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
 		F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 			children = (
 				CFDC06C42A0395D9002D1E25 /* Pointer.swift */,
 				CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */,
+				CFDC07012A07D922002D1E25 /* LowPassFilter.swift */,
 			);
 			path = Pointer;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDC07022A07D922002D1E25 /* LowPassFilter.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				CE1D48E429FE89F40092DFF0 /* EyeTracking.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

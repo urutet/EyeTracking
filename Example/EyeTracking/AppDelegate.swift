@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         eyeTracking = EyeTracking(session: session)
-        eyeTracking?.showUIKitPointer(window: window, with: PointerConfiguration())
+        eyeTracking?.showPointer(window: window, with: PointerConfiguration())
         
         window.makeKeyAndVisible()
         return true

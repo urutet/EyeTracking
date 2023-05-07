@@ -11,6 +11,7 @@ import UIKit
 final public class Pointer {
     private weak var window: UIWindow?
     private var pointer: UIView
+    var pointerFilter: (x: LowPassFilter, y: LowPassFilter)?
     
     public init(window: UIWindow) {
         self.window = window
@@ -34,7 +35,38 @@ final public class Pointer {
         window?.addSubview(pointer)
     }
     
-    func move(coordinates: CGPoint) {
-        pointer.frame = CGRect(x: coordinates.x, y: coordinates.y, width: pointer.frame.width, height: pointer.frame.height)
+    func move(to point: CGPoint) {
+        guard let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation else { return }
+        let size = UIScreen.main.bounds.size
+        let adjusted: (x: CGFloat, y: CGFloat)
+        
+        switch orientation {
+        case .landscapeRight, .landscapeLeft:
+            adjusted = (size.width - point.x, size.height - point.y)
+        case .portrait, .portraitUpsideDown:
+            adjusted = (size.width - point.x, size.height - point.y)
+        default:
+            assertionFailure("Unknown Orientation")
+            return
+        }
+        
+        if pointerFilter == nil {
+            pointerFilter = (
+                LowPassFilter(value: adjusted.x, filterValue: 0.85),
+                LowPassFilter(value: adjusted.y, filterValue: 0.85)
+            )
+        } else {
+            pointerFilter?.x.update(with: adjusted.x)
+            pointerFilter?.y.update(with: adjusted.y)
+        }
+        
+        guard let pointerFilter = pointerFilter else { return }
+        
+        pointer.frame = CGRect(
+            x: pointerFilter.x.value,
+            y: pointerFilter.y.value,
+            width: pointer.frame.width,
+            height: pointer.frame.height
+        )
     }
 }
