@@ -16,11 +16,14 @@
 		8B0394AFC79FB908BF48EE9F /* Pods_EyeTracking_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616D8A9F4942E414B8E1581F /* Pods_EyeTracking_Example.framework */; };
 		CE1D48DE29FE7B490092DFF0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48DD29FE7B490092DFF0 /* Session.swift */; };
 		CE1D48E129FE7C2E0092DFF0 /* SessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E029FE7C2E0092DFF0 /* SessionError.swift */; };
-		CE1D48E429FE89F40092DFF0 /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E329FE89F40092DFF0 /* EyeTracking.swift */; };
+		CE1D48E429FE89F40092DFF0 /* EyeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E329FE89F40092DFF0 /* EyeTracker.swift */; };
 		CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D48E829FE8C4E0092DFF0 /* SessionDelegate.swift */; };
 		CFDC06C52A0395D9002D1E25 /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC06C42A0395D9002D1E25 /* Pointer.swift */; };
 		CFDC06CB2A039D97002D1E25 /* PointerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */; };
-		CFDC07022A07D922002D1E25 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07012A07D922002D1E25 /* LowPassFilter.swift */; };
+		CFDC07072A07E0CC002D1E25 /* EyeTrackerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07062A07E0CC002D1E25 /* EyeTrackerDelegate.swift */; };
+		CFDC07092A07E589002D1E25 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07082A07E589002D1E25 /* Plane.swift */; };
+		CFDC070D2A07E5BC002D1E25 /* SIMD+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC070C2A07E5BC002D1E25 /* SIMD+Vector.swift */; };
+		CFDC070F2A07E5D1002D1E25 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC070E2A07E5D1002D1E25 /* Ray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,11 +56,14 @@
 		C51EDC4D132A140AF2EE29F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CE1D48DD29FE7B490092DFF0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CE1D48E029FE7C2E0092DFF0 /* SessionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionError.swift; sourceTree = "<group>"; };
-		CE1D48E329FE89F40092DFF0 /* EyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
+		CE1D48E329FE89F40092DFF0 /* EyeTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTracker.swift; sourceTree = "<group>"; };
 		CE1D48E829FE8C4E0092DFF0 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		CFDC06C42A0395D9002D1E25 /* Pointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pointer.swift; sourceTree = "<group>"; };
 		CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerConfiguration.swift; sourceTree = "<group>"; };
-		CFDC07012A07D922002D1E25 /* LowPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
+		CFDC07062A07E0CC002D1E25 /* EyeTrackerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerDelegate.swift; sourceTree = "<group>"; };
+		CFDC07082A07E589002D1E25 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		CFDC070C2A07E5BC002D1E25 /* SIMD+Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SIMD+Vector.swift"; sourceTree = "<group>"; };
+		CFDC070E2A07E5D1002D1E25 /* Ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
 		F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,8 +180,9 @@
 		CE1D48DC29FE7A850092DFF0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC070A2A07E5A4002D1E25 /* Extensions */,
 				CFDC06C32A0395CA002D1E25 /* Pointer */,
-				CE1D48E229FE89E80092DFF0 /* EyeTracking */,
+				CE1D48E229FE89E80092DFF0 /* EyeTracker */,
 				CE1D48DF29FE7C1D0092DFF0 /* Session */,
 			);
 			path = Sources;
@@ -191,12 +198,15 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
-		CE1D48E229FE89E80092DFF0 /* EyeTracking */ = {
+		CE1D48E229FE89E80092DFF0 /* EyeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D48E329FE89F40092DFF0 /* EyeTracking.swift */,
+				CE1D48E329FE89F40092DFF0 /* EyeTracker.swift */,
+				CFDC07062A07E0CC002D1E25 /* EyeTrackerDelegate.swift */,
+				CFDC07082A07E589002D1E25 /* Plane.swift */,
+				CFDC070E2A07E5D1002D1E25 /* Ray.swift */,
 			);
-			path = EyeTracking;
+			path = EyeTracker;
 			sourceTree = "<group>";
 		};
 		CFDC06C32A0395CA002D1E25 /* Pointer */ = {
@@ -204,9 +214,24 @@
 			children = (
 				CFDC06C42A0395D9002D1E25 /* Pointer.swift */,
 				CFDC06CA2A039D97002D1E25 /* PointerConfiguration.swift */,
-				CFDC07012A07D922002D1E25 /* LowPassFilter.swift */,
 			);
 			path = Pointer;
+			sourceTree = "<group>";
+		};
+		CFDC070A2A07E5A4002D1E25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC070B2A07E5AB002D1E25 /* SIMD */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CFDC070B2A07E5AB002D1E25 /* SIMD */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC070C2A07E5BC002D1E25 /* SIMD+Vector.swift */,
+			);
+			path = SIMD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,15 +428,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFDC07022A07D922002D1E25 /* LowPassFilter.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				CE1D48E429FE89F40092DFF0 /* EyeTracking.swift in Sources */,
+				CE1D48E429FE89F40092DFF0 /* EyeTracker.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */,
 				CE1D48DE29FE7B490092DFF0 /* Session.swift in Sources */,
+				CFDC07072A07E0CC002D1E25 /* EyeTrackerDelegate.swift in Sources */,
 				CE1D48E129FE7C2E0092DFF0 /* SessionError.swift in Sources */,
 				CFDC06CB2A039D97002D1E25 /* PointerConfiguration.swift in Sources */,
 				CFDC06C52A0395D9002D1E25 /* Pointer.swift in Sources */,
+				CFDC070D2A07E5BC002D1E25 /* SIMD+Vector.swift in Sources */,
+				CFDC070F2A07E5D1002D1E25 /* Ray.swift in Sources */,
+				CFDC07092A07E589002D1E25 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
