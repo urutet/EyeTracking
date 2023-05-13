@@ -7,5 +7,5 @@
 //
 
 public protocol EyeTrackerDelegate {
-    func eyeTracking(_ eyeTracker: EyeTracker, didUpdateState: EyeTracker.TrackingState)
+    func eyeTracking(_ eyeTracker: EyeTracker, didUpdateState state: EyeTracker.TrackingState, with expression: FaceExpression?)
 }

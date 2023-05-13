@@ -28,6 +28,8 @@
 		CFDC07142A0816D8002D1E25 /* FaceExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07132A0816D8002D1E25 /* FaceExpression.swift */; };
 		CFDC07162A08179C002D1E25 /* FaceTrackerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07152A08179C002D1E25 /* FaceTrackerDelegate.swift */; };
 		CFDC07192A081982002D1E25 /* Float+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07182A081982002D1E25 /* Float+Range.swift */; };
+		CFDC071F2A0D20E3002D1E25 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC071E2A0D20E3002D1E25 /* TrackingViewController.swift */; };
+		CFDC07222A0D21CD002D1E25 /* TrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC07212A0D21CD002D1E25 /* TrackingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		CFDC07132A0816D8002D1E25 /* FaceExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceExpression.swift; sourceTree = "<group>"; };
 		CFDC07152A08179C002D1E25 /* FaceTrackerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackerDelegate.swift; sourceTree = "<group>"; };
 		CFDC07182A081982002D1E25 /* Float+Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Range.swift"; sourceTree = "<group>"; };
+		CFDC071E2A0D20E3002D1E25 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		CFDC07212A0D21CD002D1E25 /* TrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingManager.swift; sourceTree = "<group>"; };
 		F72AF9BEE98B5AED21F4A391 /* Pods-EyeTracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTracking_Example.debug.xcconfig"; path = "Target Support Files/Pods-EyeTracking_Example/Pods-EyeTracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +192,8 @@
 		CE1D48DC29FE7A850092DFF0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC07202A0D21C1002D1E25 /* EyeTrackerManager */,
+				CFDC071D2A0D20D0002D1E25 /* View */,
 				CFDC07102A081152002D1E25 /* FaceTracker */,
 				CFDC070A2A07E5A4002D1E25 /* Extensions */,
 				CFDC06C32A0395CA002D1E25 /* Pointer */,
@@ -260,6 +266,22 @@
 				CFDC07182A081982002D1E25 /* Float+Range.swift */,
 			);
 			path = Float;
+			sourceTree = "<group>";
+		};
+		CFDC071D2A0D20D0002D1E25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC071E2A0D20E3002D1E25 /* TrackingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFDC07202A0D21C1002D1E25 /* EyeTrackerManager */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC07212A0D21CD002D1E25 /* TrackingManager.swift */,
+			);
+			path = EyeTrackerManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,9 +478,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDC071F2A0D20E3002D1E25 /* TrackingViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				CE1D48E429FE89F40092DFF0 /* EyeTracker.swift in Sources */,
 				CFDC07142A0816D8002D1E25 /* FaceExpression.swift in Sources */,
+				CFDC07222A0D21CD002D1E25 /* TrackingManager.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				CE1D48E929FE8C4E0092DFF0 /* SessionDelegate.swift in Sources */,
 				CE1D48DE29FE7B490092DFF0 /* Session.swift in Sources */,

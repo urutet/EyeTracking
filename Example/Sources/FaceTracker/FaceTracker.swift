@@ -11,10 +11,23 @@ import ARKit
 public class FaceTracker {
     var session: Session
     var expressions: [FaceExpression] = []
-    public var delegate: FaceTrackerDelegate?
+    public var delegate: FaceTrackerDelegate? {
+        get {
+            return nil
+        }
+        set {
+            delegates.append(newValue)
+        }
+    }
+    private var delegates: [FaceTrackerDelegate?] = []
     
     public init(session: Session) {
         self.session = session
+        session.delegates.append(self)
+    }
+    
+    init() {
+        self.session = Session()
         session.delegates.append(self)
     }
     
@@ -42,7 +55,9 @@ extension FaceTracker: SessionDelegate {
 
         expressions.forEach { expression in
             if checkExpression(expression, faceAnchor: faceAnchor) {
-                delegate?.faceTracker(self, didUpdateExpression: expression)
+                delegates.forEach { delegate in
+                    delegate?.faceTracker(self, didUpdateExpression: expression)
+                }
             }
         }
     }

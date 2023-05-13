@@ -9,23 +9,30 @@
 import UIKit
 import ARKit
 
-class ViewController: UIViewController{
+class ViewController: TrackingViewController {
     
-
-    let faceTracker = FaceTracker(session: (UIApplication.shared.delegate as! AppDelegate).session)
+    let button: UIButton = {
+        let button = UIButton()
+        
+        button.setTitle("qwerty", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
-        faceTracker.delegate = self
-        faceTracker.initiateFaceExpression(FaceExpression(blendShape: .eyeBlinkLeft, minValue: 0.4, maxValue: 1))
+        view.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 400),
+            button.heightAnchor.constraint(equalToConstant: 400)
+        ])
     }
     
 }
-
-extension ViewController: FaceTrackerDelegate {
-    func faceTracker(_ faceTracker: FaceTracker, didUpdateExpression expression: FaceExpression) {
-        print(expression.blendShape)
-    }
-}
-

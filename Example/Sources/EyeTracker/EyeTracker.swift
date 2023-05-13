@@ -12,8 +12,8 @@ import simd
 
 public class EyeTracker {
     public enum TrackingState {
-        case screenIn(CGPoint)
-        case screenOut(Edge, CGPoint)
+        case screenIn(point: CGPoint)
+        case screenOut(Edge, point: CGPoint)
     }
     
     public enum Edge {
@@ -25,16 +25,30 @@ public class EyeTracker {
     
     var session: Session
     var pointer: Pointer?
-    public var delegate: EyeTrackerDelegate?
+    public var delegate: EyeTrackerDelegate? {
+        get {
+            return nil
+        }
+        set {
+            delegates.append(newValue)
+        }
+    }
+    
+    public var delegates: [EyeTrackerDelegate?] = []
     public var screenDisplacement: Float = 0.043
     
     private var positionLogs: [CGPoint] = []
-    private(set) var state: TrackingState = .screenIn(CGPoint(x: 0, y: 0))
+    private(set) var state: TrackingState = .screenIn(point: CGPoint(x: 0, y: 0))
     private var lastUsedPositonLogIndex: Int = 0
 
     
     public init(session: Session = Session()) {
         self.session = session
+        session.delegates.append(self)
+    }
+    
+    init() {
+        self.session = Session()
         session.delegates.append(self)
     }
     
@@ -95,23 +109,25 @@ extension EyeTracker: SessionDelegate {
         guard let smoothPos = getGazePosition(frame: frame, viewport: viewport) else { return }
         
         if UIScreen.main.bounds.contains(smoothPos) {
-            state = .screenIn(smoothPos)
+            state = .screenIn(point: smoothPos)
         } else {
             switch (smoothPos.x, smoothPos.y) {
             case (_, ...0):
-                state = .screenOut(.top, smoothPos)
+                state = .screenOut(.top, point: smoothPos)
             case (_, viewport.height...):
-                state = .screenOut(.bottom, smoothPos)
+                state = .screenOut(.bottom, point: smoothPos)
             case (...0, _):
-                state = .screenOut(.left, smoothPos)
+                state = .screenOut(.left, point: smoothPos)
             case (viewport.width..., _):
-                state = .screenOut(.right, smoothPos)
+                state = .screenOut(.right, point: smoothPos)
             default:
                 fatalError("Invalid state")
             }
         }
         
-        delegate?.eyeTracking(self, didUpdateState: state)
+        delegates.forEach { delegate in
+            delegate?.eyeTracking(self, didUpdateState: state, with: nil)
+        }
         
         pointer?.move(to: smoothPos)
     }
