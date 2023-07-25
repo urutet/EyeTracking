@@ -25,20 +25,12 @@ public class EyeTracker {
     
     var session: Session
     var pointer: Pointer?
-    public var delegate: EyeTrackerDelegate? {
-        get {
-            return nil
-        }
-        set {
-            delegates.append(newValue)
-        }
-    }
     
     public var delegates: [EyeTrackerDelegate?] = []
     public var screenDisplacement: Float = 0.043
     
     private var positionLogs: [CGPoint] = []
-    private(set) var state: TrackingState = .screenIn(point: CGPoint(x: 0, y: 0))
+    public private(set) var state: TrackingState = .screenIn(point: CGPoint(x: 0, y: 0))
     private var lastUsedPositonLogIndex: Int = 0
 
     
@@ -61,6 +53,14 @@ public class EyeTracker {
     public func showPointer(window: UIWindow, with config: PointerConfiguration) {
         pointer = Pointer(window: window)
         pointer?.show(with: config)
+    }
+  
+    public func setDelegate(_ delegate: EyeTrackerDelegate?) {
+        delegates.append(delegate)
+    }
+    
+    public func removeDelegate(_ delegate: EyeTrackerDelegate?) {
+        delegates = delegates.filter { $0 !== delegate }
     }
     
     func getGazePosition(frame: ARFrame, viewport: CGSize) -> CGPoint? {

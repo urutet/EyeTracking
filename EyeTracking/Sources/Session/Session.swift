@@ -12,15 +12,13 @@ import ARKit
 public class Session: NSObject {
     public let arSession = ARSession()
     public var isSessionInProgress = false
-    public private(set) var startTime = Date().timeIntervalSince1970
-    public private(set) var endTime: TimeInterval?
     
     public var delegates: [SessionDelegate] = []
     
     var faceTrackingConfiguration = {
         let config = ARFaceTrackingConfiguration()
         
-        config.maximumNumberOfTrackedFaces = ARFaceTrackingConfiguration.supportedNumberOfTrackedFaces
+        config.maximumNumberOfTrackedFaces = 1
         config.worldAlignment = .camera
         
         return config
@@ -56,7 +54,6 @@ public class Session: NSObject {
         guard isSessionInProgress else { throw SessionError.noSessionsInProgress }
         
         arSession.pause()
-        endTime = Date().timeIntervalSince1970
         isSessionInProgress = false
     }
     

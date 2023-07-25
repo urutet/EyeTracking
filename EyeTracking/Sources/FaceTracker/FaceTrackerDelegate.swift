@@ -6,6 +6,6 @@
 //  Copyright © 2023 CocoaPods. All rights reserved.
 //
 
-public protocol FaceTrackerDelegate {
+public protocol FaceTrackerDelegate: AnyObject {
     func faceTracker(_ faceTracker: FaceTracker, didUpdateExpression expression: FaceExpression)
 }

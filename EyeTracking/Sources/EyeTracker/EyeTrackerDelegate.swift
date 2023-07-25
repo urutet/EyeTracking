@@ -6,6 +6,6 @@
 //  Copyright © 2023 CocoaPods. All rights reserved.
 //
 
-public protocol EyeTrackerDelegate {
+public protocol EyeTrackerDelegate: AnyObject {
     func eyeTracking(_ eyeTracker: EyeTracker, didUpdateState state: EyeTracker.TrackingState, with expression: FaceExpression?)
 }

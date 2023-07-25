@@ -8,10 +8,10 @@
 
 
 public class TrackingManager {
-    static let shared = TrackingManager()
+    public static let shared = TrackingManager()
     
-    var eyeTracker = EyeTracker()
-    var faceTracker = FaceTracker()
+    public var eyeTracker = EyeTracker()
+    public var faceTracker = FaceTracker()
     
     private init() { }
     

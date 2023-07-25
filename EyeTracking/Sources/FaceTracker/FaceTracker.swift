@@ -11,14 +11,8 @@ import ARKit
 public class FaceTracker {
     var session: Session
     var expressions: [FaceExpression] = []
-    public var delegate: FaceTrackerDelegate? {
-        get {
-            return nil
-        }
-        set {
-            delegates.append(newValue)
-        }
-    }
+    
+    private var lastActionDate = Date()
     private var delegates: [FaceTrackerDelegate?] = []
     
     public init(session: Session) {
@@ -32,11 +26,20 @@ public class FaceTracker {
     }
     
     public func initiateFaceExpression(_ expression: FaceExpression) {
+        if expressions.first(where: { $0.blendShape == expression.blendShape }) != nil { return }
         expressions.append(expression)
     }
     
     public func removeFaceExpression(_ expression: FaceExpression) {
         expressions.removeAll { $0 == expression }
+    }
+    
+    public func setDelegate(_ delegate: FaceTrackerDelegate?) {
+        delegates.append(delegate)
+    }
+    
+    public func removeDelegate(_ delegate: FaceTrackerDelegate?) {
+        delegates = delegates.filter { $0 !== delegate }
     }
     
     func checkExpression(_ expression: FaceExpression, faceAnchor: ARFaceAnchor) -> Bool {
@@ -51,8 +54,11 @@ public class FaceTracker {
 
 extension FaceTracker: SessionDelegate {
     public func sessionDidUpdate(_ session: ARSession, frame: ARFrame) {
-        guard let faceAnchor = frame.anchors.first as? ARFaceAnchor else { return }
-
+        guard
+            let faceAnchor = frame.anchors.first as? ARFaceAnchor,
+            Date().timeIntervalSinceNow - lastActionDate.timeIntervalSinceNow >= 0.5
+        else { return }
+        lastActionDate = Date()
         expressions.forEach { expression in
             if checkExpression(expression, faceAnchor: faceAnchor) {
                 delegates.forEach { delegate in

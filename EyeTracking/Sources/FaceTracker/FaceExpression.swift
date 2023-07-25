@@ -9,9 +9,9 @@
 import ARKit
 
 public final class FaceExpression: Equatable {
-    let blendShape: ARFaceAnchor.BlendShapeLocation
-    let minValue: Float
-    let maxValue: Float
+    public let blendShape: ARFaceAnchor.BlendShapeLocation
+    public let minValue: Float
+    public let maxValue: Float
     
     public init(blendShape: ARFaceAnchor.BlendShapeLocation, minValue: Float, maxValue: Float) {
         self.blendShape = blendShape
